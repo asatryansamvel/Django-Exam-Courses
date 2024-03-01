@@ -1,0 +1,10 @@
+<form action="{% url 'courses:vote' course.id %}" method="POST">
+{% csrf_token %}
+
+  <legend><h1>Rate course: {{ course.title }}</h1></legend>
+  {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+      <input type="text" name="vote"><br>
+
+<input type="submit" value="Vote">
+</form>

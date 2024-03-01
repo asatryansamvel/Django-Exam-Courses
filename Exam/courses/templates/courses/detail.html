@@ -1,0 +1,12 @@
+
+{% csrf_token %}
+
+<legend><h1>{{ course.title}}</h1></legend>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<h2>Course Description</h2>
+<p>{{ course.description }}</p>
+
+<p>Course Rate: {{ course.rate }}</p>
+
+<a type="submit" href="{% url 'courses:rate' course.id %}">Rate</a>
